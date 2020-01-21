@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name='viewport'
+        content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <style></style>
+    <title>コインドーザーゲーム-PWA-Conference</title>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="playcanvas-stable.min.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker
+                .register("./serviceWorker.js")
+                .then(function (registration) {
+                    if (typeof registration.update == "function") {
+                        registration.update();
+                    }
+                })
+                .catch(function (error) {
+                    console.log("Error Log: " + error);
+                });
+        }
+    </script>
+    <script>
+        ASSET_PREFIX = "";
+        SCRIPT_PREFIX = "";
+        SCENE_PATH = "834883.json";
+        CONTEXT_OPTIONS = {
+            'antialias': true,
+            'alpha': true,
+            'preserveDrawingBuffer': false,
+            'preferWebGl2': true
+        };
+        SCRIPTS = [27161978, 27184265, 25616200, 27110706, 27160720, 27161795, 27162054, 27162055, 27162056, 27162057, 27166056, 27184512, 27184794, 27185832, 27186910, 27188061, 27196978, 27201883, 27201932, 27202134, 25329922, 25329921, 25329917, 25329915, 25329923, 25329912, 25329918, 25329914, 25329916, 25329919, 25329920];
+        CONFIG_FILENAME = "config.json";
+        INPUT_SETTINGS = {
+            useKeyboard: true,
+            useMouse: true,
+            useGamepads: false,
+            useTouch: true
+        };
+        pc.script.legacy = false;
+        PRELOAD_MODULES = [
+        ];
+    </script>
+</head>
+
+<body>
+    <script src="__start__.js"></script>
+    <script src="__loading__.js"></script>
+</body>
+
+</html>

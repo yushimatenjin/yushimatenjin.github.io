@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "io.github.yushimatenjin",
+            "sha256_cert_fingerprints": [
+                "2C:BE:22:2F:40:54:FC:5E:00:5C:01:C8:CB:16:8C:E4:8A:B7:67:4C:3E:F0:0B:C0:0C:3B:16:D5:04:9E:D6:BE"
+            ]
+        }
+    }
+]
