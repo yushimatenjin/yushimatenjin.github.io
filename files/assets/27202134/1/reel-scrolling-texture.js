@@ -38,7 +38,7 @@ ReelScrollingTexture.prototype.update = function(dt) {
     // Calculate how much to offset the texture
     // Speed * dt
     tmp.set(this.speed.x, this.speed.y);
-    tmp.scale(dt);
+    tmp.scale(dt * 2);
 
     // Update the diffuse and normal map offset values
     this.material.emissiveMapOffset = this.material.emissiveMapOffset.add(tmp);

@@ -40,7 +40,7 @@ Manager.prototype.initialize = function () {
 
             this.app.fire("main:stock:take");
         }
-    }, 1000)
+    }, 3000)
 };
 
 Manager.prototype.menuManager = function(){
@@ -80,6 +80,7 @@ Manager.prototype.slotManager = function () {
     // Slots
     this.app.on("game:slot:start", async () => {
         //  [x] 回転の処理を加える
+
         isRotating = true
         await delay(3000)
         this.app.fire("game:slot:stop")
@@ -110,21 +111,27 @@ Manager.prototype.slotManager = function () {
         const isWin = lottery()
         const offset = stopOffsets[Math.floor(Math.random() * stopOffsets.length)];
         const reels = this.app.root.findByTag("reel");
-        isRotating = false;
+
+     
+
         if (isWin) {
             this.app.fire("game:slot:win")
             for (let reel of reels) {
                 reel.script.reelscrollingTexture.stop(offset)
+
             }
         } else {
             for (let reel of reels) {
                 const random = stopOffsets[Math.floor(Math.random() * stopOffsets.length)];
-                console.log(random, "random")
-                console.log(reel)
                 reel.script.reelscrollingTexture.stop(random)
+
             }
         }
-        await delay(2000)
+            isRotating = false;
+
+           // await delay(2000)
+
+        
     })
 
 
