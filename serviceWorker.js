@@ -1,9 +1,7 @@
 
     var CACHE_NAME = 'COIN-FEVER-v1';
     var urlsToCache = [
-    	"./.DS_Store",
-	"./.gitignore",
-	"./.nojekyll",
+    	"./.nojekyll",
 	"./834883.json",
 	"./__game-scripts.js",
 	"./__loading__.js",
