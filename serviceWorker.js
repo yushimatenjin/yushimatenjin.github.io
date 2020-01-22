@@ -1,5 +1,5 @@
 
-    var CACHE_NAME = 'COIN-FEVER-v1.2';
+    var CACHE_NAME = 'COIN-FEVER-v1.3';
     var urlsToCache = [
     	"./.nojekyll",
 	"./834883.json",
@@ -126,5 +126,17 @@
           return fetch(event.request);
         })
       );
+    });
+
+    self.addEventListener('activate', function(evt) {
+      evt.waitUntil(
+        caches.keys().then(function(keys) {
+              var promises = [];
+              keys.forEach(function(cacheName) {
+                if (cacheName != CACHE_NAME)
+                  promises.push(caches.delete(cacheName));
+              });
+              return Promise.all(promises);
+            }));
     });
     
