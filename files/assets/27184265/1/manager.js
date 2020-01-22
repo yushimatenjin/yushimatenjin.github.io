@@ -24,6 +24,7 @@ Manager.prototype.initialize = function () {
     this.coinManager();
     this.mainManager();
     this.slotManager();
+    this.menuManager();
     this.app.fire("main:limit:sync")
     this.app.fire("main:balance:sync")
     this.app.fire("main:stock:sync")
@@ -32,7 +33,7 @@ Manager.prototype.initialize = function () {
             this.app.fire("main:balance:add");
         }
         this.app.fire("main:limit:add")
-    }, 1000)
+    }, 700)
 
     setInterval(() => {
         if (stock > 0 && !isRotating) {
@@ -41,6 +42,11 @@ Manager.prototype.initialize = function () {
         }
     }, 1000)
 };
+
+Manager.prototype.menuManager = function(){
+    // this.app.on("game:")
+}
+
 Manager.prototype.slotManager = function () {
     const lottery = () => {
         if (Math.random() * 100 < this.probabilityOf) {
@@ -90,7 +96,7 @@ Manager.prototype.slotManager = function () {
             const x = Math.random() * (2 - (-2)) + (-2)
             const y = Math.random() * (6 - (5)) + (5)
 
-            const position = new pc.Vec3(x, y, 3)
+            const position = new pc.Vec3(x, y, 1)
             this.app.fire("game:coin:create", position, type)
         }
     })
