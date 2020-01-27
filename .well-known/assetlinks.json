@@ -1,14 +1,5 @@
-[
-    {
-        "relation": [
-            "delegate_permission/common.handle_all_urls"
-        ],
-        "target": {
-            "namespace": "android_app",
-            "package_name": "io.github.yushimatenjin",
-            "sha256_cert_fingerprints": [
-                "2C:BE:22:2F:40:54:FC:5E:00:5C:01:C8:CB:16:8C:E4:8A:B7:67:4C:3E:F0:0B:C0:0C:3B:16:D5:04:9E:D6:BE"
-            ]
-        }
-    }
-]
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "com.firebaseapp.coinfever",
+               "sha256_cert_fingerprints": ["45:5E:19:85:7A:EC:74:48:E9:D2:9A:A2:28:3D:6D:81:05:39:F6:3A:11:38:70:55:9B:02:C3:3D:CB:94:57:9A"] }
+}]
