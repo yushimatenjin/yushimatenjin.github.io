@@ -1,4 +1,5 @@
-var Popup = pc.createScript("popup");
+/*jshint esversion: 6, asi: true, laxbreak: true*/
+const Popup = pc.createScript("popup");
 // エディターから変更できるようにattribteusを追加する
 Popup.attributes.add("number", { type: "number", default: 1.0 });
 Popup.attributes.add("camera", { type: "entity" });
@@ -6,7 +7,7 @@ Popup.attributes.add("targetCamera", { type: "entity" });
 Popup.attributes.add("duration", { type: "number", default: 3.0 });
 // 起動時
 Popup.prototype.initialize = function() {
-  //　タッチできる端末だったら
+//　タッチできる端末だったら
 
   if (this.app.touch) {
     // element componentがタッチされたらattributes: messageアラートとして表示する
