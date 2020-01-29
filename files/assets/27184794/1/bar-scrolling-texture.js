@@ -9,6 +9,11 @@ BarScrollingTexture.attributes.add('speed', {
     type: 'vec2'
 });
 
+BarScrollingTexture.attributes.add('opacity', {
+    type: 'number',
+    default: 0.5
+});
+
 BarScrollingTexture.tmp = new pc.Vec2();
 
 // initialize code called once per entity
@@ -27,6 +32,8 @@ BarScrollingTexture.prototype.update = function(dt) {
     // Speed * dt
     tmp.set(this.speed.x, this.speed.y);
     tmp.scale(dt);
+    
+    this.material.opacity = this.opacity
 
     // Update the diffuse and normal map offset values
     // this.material.diffuseMapOffset = this.material.diffuseMapOffset.add(tmp);

@@ -44,7 +44,6 @@ Manager.prototype.initialize = function () {
 };
 
 Manager.prototype.menuManager = function(){
-    // this.app.on("game:")
 }
 
 Manager.prototype.slotManager = function () {
@@ -60,8 +59,11 @@ Manager.prototype.slotManager = function () {
         for (const [index, val] of stocks.entries()) {
             if (stock > index) {
                 val.script.barscrollingTexture.speed.y = 3
+                val.script.barscrollingTexture.opacity = 1
             } else {
                 val.script.barscrollingTexture.speed.y = 0.3
+                val.script.barscrollingTexture.opacity = 0.5
+
             }
         }
     })
@@ -91,6 +93,15 @@ Manager.prototype.slotManager = function () {
     this.app.on("game:slot:win", async (type = 3) => {
         // winのときの処理
         // this.app.fire("game:slot:stop")
+          const particles = this.app.root.findByTag("particle");
+          for (let particle of particles) {
+               if (particle.particlesystem.isPlaying()) {
+                particle.particlesystem.stop();
+            }else{
+                particle.particlesystem.play();
+            }
+          }
+        
         const array = new Array(9);
         for (let val of array) {
             await delay(100);

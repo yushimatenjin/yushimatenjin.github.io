@@ -1,6 +1,6 @@
 /*jshint esversion: 6, asi: true, laxbreak: true*/
 
-let Game = pc.createScript("game");
+const Game = pc.createScript("game");
 // Camera
 Game.attributes.add("camera", { type: "entity" });
 Game.attributes.add("targetCamera", { type: "entity" });

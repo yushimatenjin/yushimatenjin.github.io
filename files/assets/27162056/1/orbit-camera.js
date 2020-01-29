@@ -1,4 +1,5 @@
-var OrbitCamera = pc.createScript('orbitCamera');
+/*jshint esversion: 6, asi: true, laxbreak: true*/
+const OrbitCamera = pc.createScript('orbitCamera');
 
 OrbitCamera.attributes.add('distanceMax', {type: 'number', default: 0, title: 'Distance Max', description: 'Setting this at 0 will give an infinite distance limit'});
 OrbitCamera.attributes.add('distanceMin', {type: 'number', default: 0, title: 'Distance Min'});

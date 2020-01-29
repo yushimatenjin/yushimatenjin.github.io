@@ -1,5 +1,5 @@
 
-    var CACHE_NAME = 'COIN-FEVER-v2.0';
+    var CACHE_NAME = 'COIN-FEVER-v2.1';
     var urlsToCache = [
     	"./.nojekyll",
 	"./834883.json",
