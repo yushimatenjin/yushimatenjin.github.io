@@ -12,7 +12,10 @@ AllowNotifications.prototype.notifyMe = function () {
   if (Notification.permission === "granted") {
     new Notification(`You have ${balance} coins !`);
   }
-  Notification.requestPermission().then(() => {
+
+  if (Notification.permission !== "denied") {
+    Notification.requestPermission().then(() => {
       new Notification(`You have ${balance} coins !`);
-  })
+    });
+  }
 };
