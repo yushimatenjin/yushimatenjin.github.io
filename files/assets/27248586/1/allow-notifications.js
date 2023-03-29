@@ -30,12 +30,12 @@ AllowNotifications.prototype.notifyMe = function () {
   }
 
   // Otherwise, we need to ask the user for permission
-  if (Notification.permission !== "denied") {
+//   if (Notification.permission !== "denied") {
     Notification.requestPermission(function (permission) {
       // If the user accepts, let's create a notification
       if (permission === "granted") {
         new Notification("Hi there!");
       }
     });
-  }
+//   }
 };
